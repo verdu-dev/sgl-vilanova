@@ -1,8 +1,11 @@
 ---
+import "@fontsource-variable/space-grotesk";
+import { metadata } from "@/metadata";
+
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 
-const { title, description, image, name, url } = Astro.props;
+const { title, description, image, name, url } = metadata;
 ---
 
 <!doctype html>
