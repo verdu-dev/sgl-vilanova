@@ -1,9 +1,18 @@
+---
+import Logo from "@/assets/Logo.astro";
+import Exp from "@/assets/Exp.astro";
+import Link from "@/components/Link.astro";
+---
+
 <section
-  class="relative flex min-h-screen flex-col items-center justify-center"
+  class:list={[
+    "relative flex min-h-screen flex-col items-center justify-center",
+    "before:absolute before:bottom-0 before:w-full before:h-full before:bg-gradient-to-t before:from-neutral-900 before:z-10 before:to-transparent",
+  ]}
 >
   <!-- https://www.youtube.com/watch?v=mQ0v1bjOQWE -->
   <video
-    src="/hero-bg.mp4"
+    src="/bg.mp4"
     playsinline
     autoplay
     muted
@@ -14,36 +23,32 @@
   <article
     class="z-10 flex max-w-4xl flex-col items-center justify-center text-center"
   >
-    <p class="rounded-full bg-neutral-50/10 px-4 py-2 backdrop-blur shadow-sm">
-      +30 años creando eventos seguros
+    <Logo class="text-sgl h-28" />
+
+    <p
+      class="mt-12 rounded-full gap-2 inline-flex items-center bg-neutral-50/10 px-6 py-3 shadow-sm backdrop-blur-xl" 
+    >
+      <Exp class="text-sgl w-5"></Exp>
+      <span>
+        +30 años creando eventos seguros
+      </span>
     </p>
 
-    <h1 class="text-6xl font-bold pt-2">
-      Infraestructuras técnicas certificadas para eventos de cualquier escala
+    <h1 class="mt-4 text-6xl font-bold">
+      Infraestructuras técnicas certificadas para eventos
     </h1>
 
-    <p class="mt-10">
+    <p class="mt-10 text-lg">
       En SGL Vilanova, ofrecemos alquiler de tótems de aluminio certificados y
       servicios de instalaciones eléctricas temporales para eventos. Nuestras
       soluciones técnicas están diseñadas para garantizar la seguridad, cumplir
       con la normativa vigente y adaptarse a las necesidades de festivales,
-      conciertos y otros eventos de cualquier tamaño.
+      conciertos y cualquier otro tipo de eventos.
     </p>
 
     <div class="mt-10 flex gap-4">
-      <a
-        href="#"
-        class="rounded-md border border-orange-400 bg-orange-400 px-6 py-3 font-medium text-neutral-950"
-      >
-        Descubre nuestras soluciones
-      </a>
-
-      <a
-        href="#"
-        class="rounded-md border border-neutral-100 px-6 py-3 font-medium"
-      >
-        Solicita tu presupuesto
-      </a>
+      <Link>Solicita tu presupuesto</Link>
+      <Link alt>Descubre nuestras soluciones</Link>
     </div>
   </article>
 </section>

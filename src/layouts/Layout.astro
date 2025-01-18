@@ -34,7 +34,7 @@ const { title, description, image, name, url } = Astro.props;
   </head>
 
   <body class="bg-neutral-900 text-stone-100">
-    <div class="flex min-h-svh flex-col overflow-hidden">
+    <div class="flex min-h-svh flex-col overflow-hidden bg-[url('/bg.svg')] bg-cover">
       <Header />
       <slot />
       <Footer />
