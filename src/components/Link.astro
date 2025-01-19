@@ -2,7 +2,8 @@
   href={Astro.props.href}
   target={Astro.props.target}
   class:list={[
-    "rounded-md border border-orange-400 bg-orange-400 px-6 py-3 font-medium text-neutral-950 hover:scale-105 transition-transform",
+    "rounded-md border border-orange-400 bg-orange-400 px-6 py-3 font-medium text-neutral-950 transition-transform hover:scale-105",
+    Astro.props.class,
     Astro.props.alt && "!border-neutral-100 !bg-transparent !text-neutral-100",
   ]}
 >

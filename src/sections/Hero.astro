@@ -7,31 +7,28 @@ import Link from "@/components/Link.astro";
 <section
   class:list={[
     "relative flex min-h-screen flex-col items-center justify-center",
-    "before:absolute before:bottom-0 before:w-full before:h-full before:bg-gradient-to-t before:from-neutral-900 before:z-10 before:to-transparent",
+    "before:absolute before:bottom-0 before:z-10 before:size-full before:bg-gradient-to-t before:from-neutral-950 before:to-transparent",
+    "after:absolute after:bottom-0 after:z-10 after:size-full after:bg-gradient-to-b after:from-neutral-950 after:to-transparent"
   ]}
 >
-  <!-- https://www.youtube.com/watch?v=mQ0v1bjOQWE -->
   <video
-    src="/bg.mp4"
+    src="/bg.webm"
     playsinline
     autoplay
     muted
     loop
     class="absolute inset-0 size-full object-cover"></video>
-  <div class="absolute inset-0 bg-neutral-900/80"></div>
 
   <article
-    class="z-10 flex max-w-4xl flex-col items-center justify-center text-center"
+    class="z-20 flex max-w-4xl flex-col items-center justify-center text-center"
   >
-    <Logo class="text-sgl h-28" />
+    <Logo class="h-28 text-sgl" />
 
     <p
-      class="mt-12 rounded-full gap-2 inline-flex items-center bg-gradient-to-tr from-neutral-50/0 border border-neutral-50/10 to-neutral-50/10 px-6 py-3 shadow-sm backdrop-blur-xl" 
+      class="mt-8 inline-flex items-center gap-2 rounded-full border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 px-4 py-1 shadow-sm backdrop-blur-xl"
     >
-      <Exp class="text-sgl w-5"></Exp>
-      <span>
-        30 años creando eventos seguros
-      </span>
+      <Exp class="w-5 text-sgl" />
+      <span> 30 años creando eventos seguros </span>
     </p>
 
     <h1 class="mt-4 text-6xl font-bold">
@@ -39,11 +36,12 @@ import Link from "@/components/Link.astro";
     </h1>
 
     <p class="mt-10 text-lg">
-      En SGL Vilanova, ofrecemos alquiler de tótems de aluminio certificados y
-      servicios de instalaciones eléctricas temporales para eventos. Nuestras
-      soluciones técnicas están diseñadas para garantizar la seguridad, cumplir
-      con la normativa vigente y adaptarse a las necesidades de festivales,
-      conciertos y cualquier otro tipo de eventos.
+      En <strong>SGL Vilanova</strong>, ofrecemos alquiler de <strong
+        >tótems de aluminio</strong
+      > certificados y servicios de <strong>instalaciones eléctricas</strong> temporales
+      para eventos. Nuestras soluciones técnicas están diseñadas para garantizar
+      la seguridad, cumplir con la normativa vigente y adaptarse a las necesidades
+      de festivales, conciertos y cualquier otro tipo de eventos.
     </p>
 
     <div class="mt-10 flex gap-4">

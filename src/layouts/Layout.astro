@@ -4,6 +4,7 @@ import { metadata } from "@/metadata";
 
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import Background from "@/components/Background.astro";
 
 const { title, description, image, name, url } = metadata;
 ---
@@ -36,8 +37,9 @@ const { title, description, image, name, url } = metadata;
     <meta name="twitter:image:alt" content={title} />
   </head>
 
-  <body class="bg-neutral-900 text-stone-100">
-    <div class="flex min-h-svh flex-col overflow-hidden bg-[url('/bg.svg')] bg-cover">
+  <body class="bg-neutral-950 text-stone-100">
+    <Background />
+    <div class="flex min-h-svh flex-col overflow-hidden">
       <Header />
       <slot />
       <Footer />
