@@ -7,58 +7,60 @@ import Link from "@/components/Link.astro";
 
 <section
   id="instalaciones-electricas"
-  class="flex flex-col items-start justify-center px-6 pt-32 md:items-center"
+  class="flex flex-col items-start justify-center pt-32 md:items-center"
 >
   <article
-    class="z-10 flex max-w-4xl flex-col justify-center md:items-center md:text-center"
+    class="z-10 flex max-w-7xl flex-col justify-center px-6 md:items-center text-center"
   >
-    <h2 class="text-3xl font-bold md:text-4xl">
-      Instalaciones eléctricas temporales para eventos
-    </h2>
-    <p class="mt-6">
-      Las <strong>instalaciones eléctricas temporales</strong> de SGL Vilanova están
-      diseñadas para ofrecer soluciones de <strong
-        >electricidad segura y eficiente para eventos</strong
-      >. Ya sea un festival, concierto o evento corporativo, nuestros sistemas
-      están certificados para garantizar el cumplimiento con las normativas
-      vigentes. Desde el suministro hasta la certificación final, nos encargamos
-      de todo para que tu evento se desarrolle sin contratiempos.
-    </p>
+    <div class="flex max-w-4xl flex-col">
+      <h2 class="text-3xl font-bold md:text-4xl">
+        Instalaciones eléctricas temporales para eventos
+      </h2>
+      <p class="mt-6">
+        Las <strong>instalaciones eléctricas temporales</strong> de SGL Vilanova
+        están diseñadas para ofrecer soluciones de <strong
+          >electricidad segura y eficiente para eventos</strong
+        >. Ya sea un festival, concierto o evento corporativo, nuestros sistemas
+        están certificados para garantizar el cumplimiento con las normativas
+        vigentes. Desde el suministro hasta la certificación final, nos
+        encargamos de todo para que tu evento se desarrolle sin contratiempos.
+      </p>
+    </div>
 
     <ul class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
       <li
-        class="flex flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 shadow-sm backdrop-blur-xl"
+        class="flex aspect-[3/2] flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 text-center shadow-sm backdrop-blur-xl"
       >
         <Custom class="h-14 text-sgl" />
-        <h3 class="mt-4 text-2xl font-bold">Soluciones personalizadas</h3>
+        <h3 class="mt-4 text-xl font-bold">Soluciones personalizadas</h3>
         <p>para el tipo de evento que necesites</p>
       </li>
 
       <li
-        class="flex flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 shadow-sm backdrop-blur-xl"
+        class="flex aspect-[3/2] flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 text-center shadow-sm backdrop-blur-xl"
       >
         <Cert class="h-14 text-sgl" />
-        <h3>Equipos certificados</h3>
+        <h3 class="mt-4 text-xl font-bold">Equipos certificados</h3>
         <p>para asegurar la seguridad eléctrica</p>
       </li>
 
       <li
-        class="flex flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 shadow-sm backdrop-blur-xl"
+        class="flex aspect-[3/2] flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 text-center shadow-sm backdrop-blur-xl"
       >
         <Eco class="h-14 text-sgl" />
-        <h3>Cumplimiento de normativas</h3>
+        <h3 class="mt-4 text-xl font-bold">Cumplimiento de normativas</h3>
         <p>y garantía de instalación sin imprevistos</p>
       </li>
     </ul>
   </article>
 
-  <div class="flex flex-col border-t border-neutral-50/10">
-    <p class="mt-20">
+  <div
+    class="mt-20 flex w-full max-w-7xl flex-col gap-8 border-t border-neutral-50/10 px-6 pb-20 pt-10 items-center text-center"
+  >
+    <p class="max-w-2xl text-xl">
       Si necesitas <strong>instalaciones eléctricas para eventos</strong>, no
       dudes en contactarnos para una solución a medida.
     </p>
-    <Link href="#contact" class="mt-6">
-      Solicita tu presupuesto personalizado
-    </Link>
+    <Link href="#contact" class="flex-auto max-w-72"> Solicita tu presupuesto </Link>
   </div>
 </section>

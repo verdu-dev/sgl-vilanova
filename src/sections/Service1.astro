@@ -10,10 +10,10 @@ import Link from "@/components/Link.astro";
   ]}
 >
   <article
-    class="z-10 flex max-w-7xl flex-col items-center justify-center gap-20 px-6 md:flex-row"
+    class="z-10 flex max-w-7xl flex-col items-center justify-center gap-20 px-6 md:flex-row text-center md:text-left"
   >
     <div class="flex grow flex-col gap-6">
-      <h2 class="text-3xl md:text-4xl font-bold">
+      <h2 class="text-3xl font-bold md:text-4xl">
         Alquiler de tótems de aluminio con base de hormigón para eventos
       </h2>
       <p>
@@ -29,7 +29,7 @@ import Link from "@/components/Link.astro";
 
       <p class="mt-6">Certificaciónes de seguridad</p>
 
-      <ul class="flex items-center gap-8">
+      <ul class="flex items-center justify-center md:justify-start gap-8 saturate-50">
         <li>
           <img src="/tuv-rheinland.webp" alt="TÜV Rheinland" class="h-16" />
         </li>
@@ -37,7 +37,7 @@ import Link from "@/components/Link.astro";
           <img
             src="/hormigon-expert.png"
             alt="Hormigon Expert Anefhop"
-            class="h-20"
+            class="h-20 -translate-y-2"
           />
         </li>
         <li>
@@ -46,7 +46,9 @@ import Link from "@/components/Link.astro";
       </ul>
     </div>
 
-    <aside class="aspect-[4/3] w-full md:w-1/2 shrink-0 overflow-clip rounded-xl">
+    <aside
+      class="aspect-[4/3] w-full shrink-0 overflow-clip rounded-xl md:w-1/2"
+    >
       <img
         src="/totem-de-aluminio-w.jpg"
         alt="Alquiler de tótems de aluminio"
@@ -56,7 +58,7 @@ import Link from "@/components/Link.astro";
   </article>
 
   <div
-    class="mt-20 flex flex-wrap px-6 w-full max-w-7xl gap-8 items-center justify-between border-t border-neutral-50/10 pb-20 pt-10"
+    class="mt-20 flex w-full max-w-7xl flex-wrap items-center justify-center gap-8 border-t border-neutral-50/10 px-6 pb-20 pt-10 text-center md:justify-between md:text-left"
   >
     <p class="max-w-2xl text-xl">
       La base de hormigón es un diseño creado por SGL Vilanova y certificado
@@ -65,7 +67,7 @@ import Link from "@/components/Link.astro";
       siguiente enlace.
     </p>
 
-    <Link href="/Dossier-tecnic_SGL-Vilanova.pdf" target="_blank">
+    <Link href="/Dossier-tecnic_SGL-Vilanova.pdf" target="_blank" class="flex-auto max-w-72">
       Ver el dossier técnico
     </Link>
   </div>
