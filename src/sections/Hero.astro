@@ -20,9 +20,9 @@ import Link from "@/components/Link.astro";
     class="absolute inset-0 size-full object-cover"></video>
 
   <article
-    class="z-20 flex max-w-4xl flex-col items-center justify-center text-center"
+    class="z-20 flex max-w-4xl flex-col items-center justify-center text-center px-6"
   >
-    <Logo class="h-28 text-sgl" />
+    <Logo class="h-20 md:h-28 text-sgl" />
 
     <p
       class="mt-8 inline-flex items-center gap-2 rounded-full border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 px-4 py-1 shadow-sm backdrop-blur-xl"
@@ -31,11 +31,11 @@ import Link from "@/components/Link.astro";
       <span> 30 años creando eventos seguros </span>
     </p>
 
-    <h1 class="mt-4 text-6xl font-bold">
+    <h1 class="mt-4 text-3xl md:text-6xl font-bold">
       Infraestructuras técnicas certificadas para eventos
     </h1>
 
-    <p class="mt-10 text-lg">
+    <p class="mt-10 text-base md:text-lg">
       En <strong>SGL Vilanova</strong>, ofrecemos alquiler de <strong
         >tótems de aluminio</strong
       > certificados y servicios de <strong>instalaciones eléctricas</strong> temporales
@@ -44,9 +44,9 @@ import Link from "@/components/Link.astro";
       de festivales, conciertos y cualquier otro tipo de eventos.
     </p>
 
-    <div class="mt-10 flex gap-4">
-      <Link>Solicita tu presupuesto</Link>
-      <Link alt>Descubre nuestras soluciones</Link>
+    <div class="mt-10 flex flex-col md:flex-row justify-center gap-4">
+      <Link class="flex-auto max-w-72">Solicita tu presupuesto</Link>
+      <Link class="flex-auto max-w-72" alt>Descubre nuestras soluciones</Link>
     </div>
   </article>
 </section>

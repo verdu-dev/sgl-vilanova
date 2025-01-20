@@ -1,44 +1,64 @@
+---
+import Cert from "@/assets/Cert.astro";
+import Custom from "@/assets/Custom.astro";
+import Eco from "@/assets/Eco.astro";
+import Link from "@/components/Link.astro";
+---
+
 <section
   id="instalaciones-electricas"
-  class="flex flex-col items-center justify-center pt-32"
+  class="flex flex-col items-start justify-center px-6 pt-32 md:items-center"
 >
   <article
-    class="z-10 flex max-w-4xl flex-col items-center justify-center text-center"
+    class="z-10 flex max-w-4xl flex-col justify-center md:items-center md:text-center"
   >
-    <h2 class="text-4xl font-bold">
-      Alquiler de Tótems de Aluminio con Base de Hormigón para Eventos
+    <h2 class="text-3xl font-bold md:text-4xl">
+      Instalaciones eléctricas temporales para eventos
     </h2>
-    <p>
-      En SGL Vilanova, ofrecemos el alquiler de <strong
-        >tótems de aluminio</strong
-      > con <strong>base de hormigón</strong>, una solución robusta y segura
-      para tus eventos. Diseñados y certificados por nosotros, estos tótems
-      cumplen con la normativa vigente, ofreciendo estabilidad y durabilidad
-      para montar estructuras como escenarios y carpas. Adaptables a eventos de
-      cualquier tamaño, son la opción perfecta para garantizar la seguridad y
-      éxito de tu evento.
+    <p class="mt-6">
+      Las <strong>instalaciones eléctricas temporales</strong> de SGL Vilanova están
+      diseñadas para ofrecer soluciones de <strong
+        >electricidad segura y eficiente para eventos</strong
+      >. Ya sea un festival, concierto o evento corporativo, nuestros sistemas
+      están certificados para garantizar el cumplimiento con las normativas
+      vigentes. Desde el suministro hasta la certificación final, nos encargamos
+      de todo para que tu evento se desarrolle sin contratiempos.
     </p>
-    <ul>
-      <li>
-        <strong>Diseño propio y certificado</strong>, garantizando cumplimiento
-        con la normativa.
+
+    <ul class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+      <li
+        class="flex flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 shadow-sm backdrop-blur-xl"
+      >
+        <Custom class="h-14 text-sgl" />
+        <h3 class="mt-4 text-2xl font-bold">Soluciones personalizadas</h3>
+        <p>para el tipo de evento que necesites</p>
       </li>
-      <li>
-        <strong>Estabilidad excepcional</strong> con base de hormigón para garantizar
-        la seguridad.
+
+      <li
+        class="flex flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 shadow-sm backdrop-blur-xl"
+      >
+        <Cert class="h-14 text-sgl" />
+        <h3>Equipos certificados</h3>
+        <p>para asegurar la seguridad eléctrica</p>
       </li>
-      <li>
-        <strong>Versatilidad</strong> para eventos pequeños o grandes, adaptados
-        a tus necesidades.
+
+      <li
+        class="flex flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 shadow-sm backdrop-blur-xl"
+      >
+        <Eco class="h-14 text-sgl" />
+        <h3>Cumplimiento de normativas</h3>
+        <p>y garantía de instalación sin imprevistos</p>
       </li>
     </ul>
-    <p>
-      Si buscas <strong>alquiler de tótems</strong> de alta calidad y <strong
-        >soluciones técnicas seguras para eventos</strong
-      >, contáctanos para más información.
-    </p>
-    <a href="#contact" class="cta-button">
-      Solicita tu presupuesto personalizado
-    </a>
   </article>
+
+  <div class="flex flex-col border-t border-neutral-50/10">
+    <p class="mt-20">
+      Si necesitas <strong>instalaciones eléctricas para eventos</strong>, no
+      dudes en contactarnos para una solución a medida.
+    </p>
+    <Link href="#contact" class="mt-6">
+      Solicita tu presupuesto personalizado
+    </Link>
+  </div>
 </section>
