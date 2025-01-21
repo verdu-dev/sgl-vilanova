@@ -1,0 +1,13 @@
+---
+const { src, alt, width, height } = Astro.props;
+---
+
+<img
+  width={width}
+  height={height}
+  src={src}
+  alt={alt}
+  decoding="async"
+  loading="lazy"
+  class={Astro.props.class}
+/>

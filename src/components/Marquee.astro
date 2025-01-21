@@ -1,0 +1,137 @@
+---
+import { clientLogos } from "@/lib/images";
+
+const { duration = 40, width = 140, height = 40, gap = 30 } = Astro.props;
+const { length } = clientLogos;
+---
+
+<div
+  style={`--amount: ${length}; --duration: ${duration}s; --width: ${width}px; --height: ${height}px; --gap: ${gap}px;`}
+  class:list={["w-full", Astro.props.class]}
+>
+  <ul class="relative size-full overflow-clip">
+    {
+      clientLogos.map(({ src, alt }) => (
+        <li>
+          <img
+            src={src}
+            alt={alt}
+            class="absolute left-0 top-0 object-contain"
+          />
+        </li>
+      ))
+    }
+  </ul>
+  <ul class="relative size-full overflow-clip md:hidden">
+    {
+      clientLogos
+        .reverse()
+        .map(({ src, alt }: { src: string; alt: string }) => (
+          <li>
+            <img
+              src={src}
+              alt={alt}
+              class="absolute left-0 top-0 object-contain"
+            />
+          </li>
+        ))
+    }
+  </ul>
+</div>
+
+<style>
+  ul {
+    height: var(--height);
+    margin-bottom: var(--gap);
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+
+    @media (max-width: 768px) {
+      mask-image: none;
+    }
+  }
+
+  ul img {
+    width: var(--width);
+    height: var(--height);
+    object-fit: contain;
+    transform: translateX(
+      max(calc((var(--width) + var(--gap)) * var(--amount)), 100vw)
+    );
+    animation-name: scrollLeft;
+    animation-duration: var(--duration);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  ul:last-of-type img {
+    animation-direction: reverse;
+  }
+
+  li:nth-of-type(1) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 1) * -1);
+  }
+
+  li:nth-of-type(2) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 2) * -1);
+  }
+
+  li:nth-of-type(3) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 3) * -1);
+  }
+
+  li:nth-of-type(4) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 4) * -1);
+  }
+
+  li:nth-of-type(5) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 5) * -1);
+  }
+
+  li:nth-of-type(6) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 6) * -1);
+  }
+
+  li:nth-of-type(7) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 7) * -1);
+  }
+
+  li:nth-of-type(8) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 8) * -1);
+  }
+
+  li:nth-of-type(9) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 9) * -1);
+  }
+
+  li:nth-of-type(10) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 10) * -1);
+  }
+
+  li:nth-of-type(11) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 11) * -1);
+  }
+
+  li:nth-of-type(12) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 12) * -1);
+  }
+
+  li:nth-of-type(13) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 13) * -1);
+  }
+
+  li:nth-of-type(14) > img {
+    animation-delay: calc(var(--duration) / 14 * (14 - 14) * -1);
+  }
+
+  @keyframes scrollLeft {
+    to {
+      transform: translateX(-160px);
+    }
+  }
+</style>

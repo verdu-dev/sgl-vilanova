@@ -1,70 +1,38 @@
 ---
-import Exp from "@/assets/Exp.astro";
 import Iso from "@/assets/Iso.astro";
+import Link from "./Link.astro";
 ---
 
 <header
   class:list={[
-    "hidden md:flex fixed top-0 z-50 w-full justify-center border-neutral-50/10 transition-all",
+    "fixed top-0 z-50 hidden w-full justify-center border-neutral-50/10 transition-all lg:flex",
     false && "border-b backdrop-blur-xl",
   ]}
 >
-  <div class="flex w-full max-w-7xl items-center justify-between p-4">
+  <nav class="flex w-full max-w-7xl items-center justify-between p-4">
     <a href="/">
       <Iso class:list={["h-20 py-3 transition-all", false && "h-10"]} />
     </a>
 
-    <nav>
-      <ul class="flex">
-        <li class="flex">
-          <a
-            href="/"
-            class="px-4 py-2 font-medium transition-colors hover:text-sgl"
-          >
-            Inicio
-          </a>
-        </li>
-
-        <li class="flex">
-          <a
-            href="/servicios"
-            class="px-4 py-2 font-medium transition-colors hover:text-sgl"
-          >
-            Servicios
-          </a>
-        </li>
-
-        <li class="flex">
-          <a
-            href="/clientes"
-            class="px-4 py-2 font-medium transition-colors hover:text-sgl"
-          >
-            Clientes
-          </a>
-        </li>
-
-        <li class="flex">
-          <a
-            href="/contacto"
-            class="px-4 py-2 font-medium transition-colors hover:text-sgl"
-          >
-            Contacto
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+    <Link href="#contacto" alt>Contacto</Link>
+  </nav>
 </header>
 
 <script>
   const header = document.querySelector("header") as HTMLElement;
   const logo = document.querySelector("header a>svg") as HTMLElement;
+  const contact = document.querySelector(
+    "header a:last-of-type"
+  ) as HTMLElement;
 
   function setScroll() {
     if (window.scrollY > 0) {
       header.classList.add("backdrop-blur-xl");
       header.classList.add("border-b");
       logo.classList.add("h-10");
+      contact.classList.add("!border-sgl");
+      contact.classList.add("!bg-sgl");
+      contact.classList.add("!text-neutral-950");
 
       logo.classList.remove("h-20");
       logo.classList.remove("py-3");
@@ -72,6 +40,9 @@ import Iso from "@/assets/Iso.astro";
       header.classList.remove("backdrop-blur-xl");
       header.classList.remove("border-b");
       logo.classList.remove("h-10");
+      contact.classList.remove("!border-sgl");
+      contact.classList.remove("!bg-sgl");
+      contact.classList.remove("!text-neutral-950");
 
       logo.classList.add("h-20");
       logo.classList.add("py-3");

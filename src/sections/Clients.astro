@@ -1,73 +1,8 @@
-<section
-  id="clientes"
-  class="flex flex-col items-center justify-center px-6 py-32 text-center"
->
-  <h2 class="text-4xl font-bold">Clientes con los que trabajamos</h2>
+---
+import Marquee from "@/components/Marquee.astro";
+---
 
-  <ul
-    class="mt-10 flex max-w-7xl flex-wrap items-center justify-center gap-10 text-center opacity-70 saturate-0"
-  >
-    <li>
-      <img
-        src="/logos/ajuntament-sitges.svg"
-        alt="Ajuntament de Sitges"
-        class="h-14"
-      />
-    </li>
-    <li>
-      <img src="/logos/coca-cola.svg" alt="Coca-Cola" class="h-14" />
-    </li>
-    <li>
-      <img
-        src="/logos/ajuntament-vilanova.svg"
-        alt="Ajuntament de Vilanova i la Geltrú"
-        class="h-14"
-      />
-    </li>
-    <li>
-      <img
-        src="/logos/primavera-sound.svg"
-        alt="Primavera Sound"
-        class="h-14"
-      />
-    </li>
-    <li>
-      <img
-        src="/logos/ajuntament-canyelles.svg"
-        alt="Ajuntament de Canyelles"
-        class="h-14"
-      />
-    </li>
-    <li>
-      <img
-        src="/logos/ajuntament-barcelona.svg"
-        alt="Ajuntament de Barcelona"
-        class="h-14"
-      />
-    </li>
-    <li>
-      <img src="/logos/mediapro.svg" alt="Mediapro" class="h-14" />
-    </li>
-    <li>
-      <img src="/logos/aerostar.svg" alt="Aerostar" class="h-14" />
-    </li>
-    <li>
-      <img
-        src="/logos/sitges-film-festival.svg"
-        alt="Sitges Film Festival"
-        class="h-20"
-      />
-    </li>
-    <li>
-      <img
-        src="/logos/barcelona-rock-fest.svg"
-        alt="Barcelona Rock Fest"
-        class="h-20"
-      />
-    </li>
-    <li>Aynt Olivella</li>
-    <li>Aynt L'Hospitalet</li>
-    <li>Aynt Santa Coloma</li>
-    <li>Aynt de Sant Félix</li>
-  </ul>
-</section>q
+<div class="relative flex w-full flex-col items-center pt-20 lg:pt-32">
+  <h2 class="z-20 md:text-xl">Clientes con los que trabajamos</h2>
+  <Marquee class="z-20 mt-8 max-w-[1440px] opacity-50 md:mt-12" />
+</div>
