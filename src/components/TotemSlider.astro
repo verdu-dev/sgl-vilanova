@@ -5,7 +5,7 @@ import Arrow from "@/assets/Arrow.astro";
 import LazyImage from "@/assets/LazyImage.astro";
 ---
 
-<image-slider class="relative">
+<div id="totemSlider" class="relative">
   <div
     class="relative flex aspect-square snap-x snap-mandatory overflow-x-auto rounded-xl border border-neutral-50/10 shadow-sm"
   >
@@ -23,16 +23,18 @@ import LazyImage from "@/assets/LazyImage.astro";
   </div>
 
   <button
-    class="left absolute lg:left-0 top-1/2 flex size-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
+    id="prevBtn"
+    class="absolute left-0 top-1/2 flex size-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
   >
     <Arrow class="-ml-px h-6 rotate-180 text-neutral-50" />
   </button>
   <button
-    class="right absolute right-0 top-1/2 flex size-9 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
+    id="nextBtn"
+    class="absolute right-0 top-1/2 flex size-9 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
   >
     <Arrow class="ml-px h-6 text-neutral-50" />
   </button>
-</image-slider>
+</div>
 
 <style>
   .snap-x {
@@ -41,45 +43,37 @@ import LazyImage from "@/assets/LazyImage.astro";
 </style>
 
 <script>
-  class ImageSlider extends HTMLElement {
-    connectedCallback() {
-      const slider = this.firstElementChild as HTMLElement;
-      const leftButton = this.querySelector("button.left") as HTMLButtonElement;
-      const rightButton = this.querySelector(
-        "button.right"
-      ) as HTMLButtonElement;
+  const slider = document.querySelector("#totemSlider") as HTMLElement;
+  const leftButton = document.querySelector("#prevBtn") as HTMLButtonElement;
+  const rightButton = document.querySelector("#nextBtn") as HTMLButtonElement;
 
-      leftButton.addEventListener("click", () => {
-        const lastImage = slider.querySelector(
-          "img:last-child"
-        ) as HTMLImageElement;
+  leftButton.addEventListener("click", () => {
+    const lastImage = slider.querySelector(
+      "img:last-child"
+    ) as HTMLImageElement;
 
-        slider.scrollBy({
-          behavior: "smooth",
-          left: -slider.offsetWidth,
-        });
+    slider.scrollBy({
+      behavior: "smooth",
+      left: -slider.offsetWidth,
+    });
 
-        setTimeout(() => {
-          lastImage.remove();
-          slider.prepend(lastImage);
-        }, 500);
-      });
+    setTimeout(() => {
+      lastImage.remove();
+      slider.prepend(lastImage);
+    }, 500);
+  });
 
-      rightButton.addEventListener("click", () => {
-        const firstImage = slider.querySelector("img") as HTMLImageElement;
+  rightButton.addEventListener("click", () => {
+    const firstImage = slider.querySelector("img") as HTMLImageElement;
 
-        slider.scrollBy({
-          behavior: "smooth",
-          left: slider.offsetWidth,
-        });
+    slider.scrollBy({
+      behavior: "smooth",
+      left: slider.offsetWidth,
+    });
 
-        setTimeout(() => {
-          firstImage.remove();
-          slider.append(firstImage);
-        }, 500);
-      });
-    }
-  }
-
-  customElements.define("image-slider", ImageSlider);
+    setTimeout(() => {
+      firstImage.remove();
+      slider.append(firstImage);
+    }, 500);
+  });
 </script>
