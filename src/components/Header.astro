@@ -5,7 +5,7 @@ import Iso from "@/assets/Iso.astro";
 
 <header
   class:list={[
-    "fixed top-0 z-50 flex w-full justify-center border-neutral-50/10 transition-all",
+    "hidden md:flex fixed top-0 z-50 w-full justify-center border-neutral-50/10 transition-all",
     false && "border-b backdrop-blur-xl",
   ]}
 >
@@ -14,7 +14,7 @@ import Iso from "@/assets/Iso.astro";
       <Iso class:list={["h-20 py-3 transition-all", false && "h-10"]} />
     </a>
 
-    <nav class="hidden md:flex">
+    <nav>
       <ul class="flex">
         <li class="flex">
           <a
