@@ -21,18 +21,12 @@ import Link from "./Link.astro";
 <script>
   const header = document.querySelector("header") as HTMLElement;
   const logo = document.querySelector("header a>svg") as HTMLElement;
-  const contact = document.querySelector(
-    "header a:last-of-type"
-  ) as HTMLElement;
 
   function setScroll() {
     if (window.scrollY > 0) {
       header.classList.add("backdrop-blur-xl");
       header.classList.add("border-b");
       logo.classList.add("h-10");
-      contact.classList.add("!border-sgl");
-      contact.classList.add("!bg-sgl");
-      contact.classList.add("!text-neutral-950");
 
       logo.classList.remove("h-20");
       logo.classList.remove("py-3");
@@ -40,9 +34,6 @@ import Link from "./Link.astro";
       header.classList.remove("backdrop-blur-xl");
       header.classList.remove("border-b");
       logo.classList.remove("h-10");
-      contact.classList.remove("!border-sgl");
-      contact.classList.remove("!bg-sgl");
-      contact.classList.remove("!text-neutral-950");
 
       logo.classList.add("h-20");
       logo.classList.add("py-3");
