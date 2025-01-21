@@ -10,57 +10,58 @@ import Link from "@/components/Link.astro";
   class="flex flex-col items-start justify-center pt-32 md:items-center"
 >
   <article
-    class="z-10 flex max-w-7xl flex-col justify-center px-6 md:items-center text-center"
+    class="z-10 flex max-w-7xl flex-col justify-center px-6 text-center md:items-center"
   >
-    <div class="flex max-w-4xl flex-col">
-      <h2 class="text-3xl font-bold md:text-4xl">
+    <div class="flex max-w-4xl flex-col items-center">
+      <h2 class="max-w-3xl text-3xl font-bold md:text-4xl">
         Instalaciones eléctricas temporales para eventos
       </h2>
       <p class="mt-6">
         Las <strong>instalaciones eléctricas temporales</strong> de SGL Vilanova
         están diseñadas para ofrecer soluciones de <strong
           >electricidad segura y eficiente para eventos</strong
-        >. Ya sea un festival, concierto o evento corporativo, nuestros sistemas
-        están certificados para garantizar el cumplimiento con las normativas
-        vigentes. Desde el suministro hasta la certificación final, nos
-        encargamos de todo para que tu evento se desarrolle sin contratiempos.
+        >. Desde el suministro hasta la certificación final, nos encargamos de
+        todo para que tu evento se desarrolle sin contratiempos.
       </p>
     </div>
 
-    <ul class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+    <ul
+      class="mt-12 grid grid-cols-1 gap-8 text-neutral-400 md:grid-cols-3"
+    >
       <li
-        class="flex aspect-[3/2] flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 text-center shadow-sm backdrop-blur-xl"
+        class="flex flex-col items-center justify-center gap-4 self-stretch p-8 text-center"
       >
-        <Custom class="h-14 text-sgl" />
-        <h3 class="mt-4 text-xl font-bold">Soluciones personalizadas</h3>
-        <p>para el tipo de evento que necesites</p>
+        <Custom class="h-10 text-sgl" />
+        <p>
+          <strong>Soluciones personalizadas</strong> para el tipo de evento que necesites
+        </p>
       </li>
 
       <li
-        class="flex aspect-[3/2] flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 text-center shadow-sm backdrop-blur-xl"
+        class="flex flex-col items-center justify-center gap-4 self-stretch p-8 text-center"
       >
-        <Cert class="h-14 text-sgl" />
-        <h3 class="mt-4 text-xl font-bold">Equipos certificados</h3>
-        <p>para asegurar la seguridad eléctrica</p>
+        <Cert class="h-10 text-sgl" />
+        <p>
+          <strong>Equipos certificados</strong> para asegurar la instalación eléctrica
+        </p>
       </li>
 
       <li
-        class="flex aspect-[3/2] flex-col items-center justify-center self-stretch rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-neutral-50/0 to-neutral-50/10 p-8 text-center shadow-sm backdrop-blur-xl"
+        class="flex flex-col items-center justify-center gap-4 self-stretch p-8 text-center"
       >
-        <Eco class="h-14 text-sgl" />
-        <h3 class="mt-4 text-xl font-bold">Cumplimiento de normativas</h3>
-        <p>y garantía de instalación sin imprevistos</p>
+        <Eco class="h-10 text-sgl" />
+        <p>
+          <strong>Cumplimiento de normativas</strong> y garantía de instalación
+        </p>
       </li>
     </ul>
-  </article>
 
-  <div
-    class="mt-20 flex w-full max-w-7xl flex-col gap-8 border-t border-neutral-50/10 px-6 pb-20 pt-10 items-center text-center"
-  >
-    <p class="max-w-2xl text-xl">
+    <p class="mt-12 max-w-2xl text-xl">
       Si necesitas <strong>instalaciones eléctricas para eventos</strong>, no
       dudes en contactarnos para una solución a medida.
     </p>
-    <Link href="#contact" class="flex-auto max-w-72"> Solicita tu presupuesto </Link>
-  </div>
+    <Link href="#contact" class="max-w-72 flex-auto mt-8">
+      Solicita tu presupuesto
+    </Link>
+  </article>
 </section>

@@ -1,4 +1,5 @@
 ---
+import Exp from "@/assets/Exp.astro";
 import Link from "@/components/Link.astro";
 ---
 
@@ -10,7 +11,7 @@ import Link from "@/components/Link.astro";
   ]}
 >
   <article
-    class="z-10 flex max-w-7xl flex-col items-center justify-center gap-20 px-6 md:flex-row text-center md:text-left"
+    class="z-10 flex max-w-7xl flex-col items-center justify-center gap-20 px-6 text-center md:flex-row md:text-left"
   >
     <div class="flex grow flex-col gap-6">
       <h2 class="text-3xl font-bold md:text-4xl">
@@ -20,34 +21,39 @@ import Link from "@/components/Link.astro";
         En SGL Vilanova, ofrecemos el alquiler de <strong
           >tótems de aluminio</strong
         > con <strong>base de hormigón</strong>, una solución robusta y segura
-        para tus eventos. Diseñados y certificados por nosotros, estos tótems
-        cumplen con la normativa vigente, ofreciendo estabilidad y durabilidad
-        para montar estructuras como escenarios y carpas. Adaptables a eventos
-        de cualquier tamaño, son la opción perfecta para garantizar la seguridad
-        y éxito de tu evento.
+        para tus eventos. , estos tótems cumplen con la normativa vigente,
+        ofreciendo estabiullidad y durabilidad para montar estructuras como
+        escenarios y carpas.
       </p>
 
-      <p class="mt-6">Certificaciónes de seguridad</p>
-
-      <ul class="flex items-center justify-center md:justify-start gap-8 saturate-50">
-        <li>
-          <img src="/tuv-rheinland.webp" alt="TÜV Rheinland" class="h-16" />
+      <ul class="flex flex-col items-start text-neutral-400">
+        <li
+          class:list={[
+            "relative flex items-center gap-1 py-2",
+            "before:absolute before:bottom-0 before:left-0 before:h-px before:w-20 before:bg-neutral-50/10",
+          ]}
+        >
+          <Exp class="h-4 text-sgl" />
+          <p>Diseño exclusisvo diseñado por SGL Vilanova</p>
         </li>
-        <li>
-          <img
-            src="/hormigon-expert.png"
-            alt="Hormigon Expert Anefhop"
-            class="h-20 -translate-y-2"
-          />
+        <li
+          class:list={[
+            "relative flex items-center gap-1 py-2",
+            "before:absolute before:bottom-0 before:left-0 before:h-px before:w-20 before:bg-neutral-50/10",
+          ]}
+        >
+          <Exp class="h-4 text-sgl" />
+          <p>Certificado de seguridad</p>
         </li>
-        <li>
-          <img src="/fantek.svg" alt="Fantek Industrial" class="h-8" />
+        <li class="flex items-center gap-1 py-2">
+          <Exp class="h-4 text-sgl" />
+          <p>Cumplimiento de normativa vigente</p>
         </li>
       </ul>
     </div>
 
     <aside
-      class="aspect-[4/3] w-full shrink-0 overflow-clip rounded-xl md:w-1/2"
+      class="aspect-square w-full shrink-0 overflow-clip rounded-xl md:w-1/3"
     >
       <img
         src="/totem-de-aluminio-w.jpg"
@@ -58,17 +64,41 @@ import Link from "@/components/Link.astro";
   </article>
 
   <div
-    class="mt-20 flex w-full max-w-7xl flex-wrap items-center justify-center gap-8 border-t border-neutral-50/10 px-6 pb-20 pt-10 text-center md:justify-between md:text-left"
+    class="mt-20 flex w-full max-w-7xl flex-col items-center justify-center border-b border-t border-neutral-50/10 px-6 py-10 text-center"
   >
-    <p class="max-w-2xl text-xl">
+    <p class="max-w-4xl text-xl">
       La base de hormigón es un diseño creado por SGL Vilanova y certificado
       para garantizar la estabilidad y seguridad de los tótems de aluminio. Si
       lo deseas puedes ver el dossier técnico de nuestras estructuras en el
       siguiente enlace.
     </p>
 
-    <Link href="/Dossier-tecnic_SGL-Vilanova.pdf" target="_blank" class="flex-auto max-w-72">
+    <Link
+      href="/Dossier-tecnic_SGL-Vilanova.pdf"
+      target="_blank"
+      class="mt-8 max-w-72 flex-auto"
+    >
       Ver el dossier técnico
     </Link>
+
+    <p class="mt-12">Certificaciones de segurirar para nuestros totems</p>
+
+    <ul
+      class="mt-8 flex items-center justify-center gap-8 saturate-50 md:justify-start"
+    >
+      <li>
+        <img src="/tuv-rheinland.webp" alt="TÜV Rheinland" class="h-16" />
+      </li>
+      <li>
+        <img
+          src="/hormigon-expert.png"
+          alt="Hormigon Expert Anefhop"
+          class="h-20 -translate-y-2"
+        />
+      </li>
+      <li>
+        <img src="/fantek.svg" alt="Fantek Industrial" class="h-8" />
+      </li>
+    </ul>
   </div>
 </section>
