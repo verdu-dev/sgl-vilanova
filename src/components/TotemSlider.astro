@@ -7,7 +7,7 @@ import LazyImage from "@/assets/LazyImage.astro";
 
 <div id="totemSlider" class="relative">
   <div
-    class="relative flex aspect-square snap-x snap-mandatory overflow-x-auto rounded-xl border border-neutral-50/10 shadow-sm"
+    class="relative flex aspect-square snap-x snap-mandatory overflow-x-auto overflow-y-clip rounded-xl border border-neutral-50/10 shadow-sm"
   >
     {
       totemImages.map(({ src, alt }) => (
@@ -43,7 +43,7 @@ import LazyImage from "@/assets/LazyImage.astro";
 </style>
 
 <script>
-  const slider = document.querySelector("#totemSlider") as HTMLElement;
+  const slider = document.querySelector("#totemSlider > div") as HTMLDivElement;
   const leftButton = document.querySelector("#prevBtn") as HTMLButtonElement;
   const rightButton = document.querySelector("#nextBtn") as HTMLButtonElement;
 
