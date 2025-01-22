@@ -1,42 +1,55 @@
 ---
-import { clientLogos } from "@/lib/images";
-
-const { duration = 40, width = 140, height = 40, gap = 30 } = Astro.props;
-const { length } = clientLogos;
+const {
+  items,
+  duration = 40,
+  width = 140,
+  height = 40,
+  gap = 30,
+  double = true,
+} = Astro.props;
+const amount = items.length;
 ---
 
 <div
-  style={`--amount: ${length}; --duration: ${duration}s; --width: ${width}px; --height: ${height}px; --gap: ${gap}px;`}
+  style={`--amount: ${amount}; --duration: ${duration}s; --width: ${width}px; --height: ${height}px; --gap: ${gap}px;`}
   class:list={["w-full", Astro.props.class]}
 >
   <ul class="relative size-full overflow-clip">
     {
-      clientLogos.map(({ src, alt }) => (
+      items.map(({ src, alt }: { src: string; alt: string }) => (
         <li>
           <img
+            width={width}
+            height={height}
             src={src}
             alt={alt}
             class="absolute left-0 top-0 object-contain"
+            decoding="async"
+            loading="lazy"
           />
         </li>
       ))
     }
   </ul>
-  <ul class="relative size-full overflow-clip md:hidden">
-    {
-      clientLogos
-        .reverse()
-        .map(({ src, alt }: { src: string; alt: string }) => (
+  {
+    double && (
+      <ul class="reverse relative size-full overflow-clip md:hidden">
+        {items.reverse().map(({ src, alt }: { src: string; alt: string }) => (
           <li>
             <img
+              width={width}
+              height={height}
               src={src}
               alt={alt}
               class="absolute left-0 top-0 object-contain"
+              decoding="async"
+              loading="lazy"
             />
           </li>
-        ))
-    }
-  </ul>
+        ))}
+      </ul>
+    )
+  }
 </div>
 
 <style>
@@ -69,69 +82,97 @@ const { length } = clientLogos;
     animation-iteration-count: infinite;
   }
 
-  ul:last-of-type img {
+  ul.reverse img {
     animation-direction: reverse;
   }
 
   li:nth-of-type(1) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 1) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 1) * -1
+    );
   }
 
   li:nth-of-type(2) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 2) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 2) * -1
+    );
   }
 
   li:nth-of-type(3) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 3) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 3) * -1
+    );
   }
 
   li:nth-of-type(4) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 4) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 4) * -1
+    );
   }
 
   li:nth-of-type(5) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 5) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 5) * -1
+    );
   }
 
   li:nth-of-type(6) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 6) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 6) * -1
+    );
   }
 
   li:nth-of-type(7) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 7) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 7) * -1
+    );
   }
 
   li:nth-of-type(8) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 8) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 8) * -1
+    );
   }
 
   li:nth-of-type(9) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 9) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 9) * -1
+    );
   }
 
   li:nth-of-type(10) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 10) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 10) * -1
+    );
   }
 
   li:nth-of-type(11) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 11) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 11) * -1
+    );
   }
 
   li:nth-of-type(12) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 12) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 12) * -1
+    );
   }
 
   li:nth-of-type(13) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 13) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 13) * -1
+    );
   }
 
   li:nth-of-type(14) > img {
-    animation-delay: calc(var(--duration) / 14 * (14 - 14) * -1);
+    animation-delay: calc(
+      var(--duration) / var(--amount) * (var(--amount) - 14) * -1
+    );
   }
 
   @keyframes scrollLeft {
     to {
-      transform: translateX(-160px);
+      transform: translateX(var(--width));
     }
   }
 </style>

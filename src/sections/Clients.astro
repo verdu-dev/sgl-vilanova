@@ -1,8 +1,12 @@
 ---
+import { clientLogos } from "@/lib/images";
 import Marquee from "@/components/Marquee.astro";
 ---
 
 <div class="relative flex w-full flex-col items-center pt-20 lg:pt-32">
   <h2 class="z-20 md:text-xl">Clientes con los que trabajamos</h2>
-  <Marquee class="z-20 mt-8 max-w-[1440px] opacity-50 md:mt-12" />
+  <Marquee
+    items={clientLogos}
+    class="z-20 mt-8 max-w-[1440px] opacity-50 md:mt-12"
+  />
 </div>

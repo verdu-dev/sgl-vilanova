@@ -1,6 +1,45 @@
+---
+import Link from "@/components/Link.astro";
+import { lastProjects } from "@/lib/projects";
+---
+
 <section
   id="trabajos-realizados"
-  class="flex flex-col items-center justify-center py-32"
+  class="flex w-full max-w-7xl flex-col items-center justify-center pt-32 md:pt-40 lg:pt-60 px-6"
 >
-  <h2 class="text-4xl font-bold">Trabajos realizados</h2>
+  <h2 class="max-w-3xl text-2xl font-bold md:text-3xl lg:text-4xl">
+    Últimos trabajos realizados
+  </h2>
+
+  <ul class="mt-10 grid grid-cols-1 gap-4 lg:gap-8 md:grid-cols-2 lg:grid-cols-4">
+    {
+      lastProjects.map(({ image, title, logo }) => (
+        <li class="flex shrink-0 self-stretch">
+          <figure class="flex flex-col items-center gap-4 rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-transparent to-neutral-50/10 p-4 shadow-sm backdrop-blur-xl">
+            <img
+              width="262"
+              height="262"
+              src={image}
+              alt={title}
+              decoding="async"
+              loading="lazy"
+              class="aspect-square rounded-lg border border-neutral-50/10 object-cover shadow-sm"
+            />
+            <figcaption class="py-2">
+              <img
+                width="144"
+                height="32"
+                src={logo}
+                alt={title}
+                decoding="async"
+                loading="lazy"
+                class="h-8 w-36 object-contain opacity-50"
+              />
+            </figcaption>
+          </figure>
+        </li>
+      ))
+    }
+  </ul>
+  <Link href="/proyectos" class="mt-10"> Ver todos los proyectos </Link>
 </section>

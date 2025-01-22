@@ -2,7 +2,6 @@
 import { totemImages } from "@/lib/images";
 
 import Arrow from "@/assets/Arrow.astro";
-import LazyImage from "@/assets/LazyImage.astro";
 ---
 
 <div id="totemSlider" class="relative">
@@ -11,12 +10,14 @@ import LazyImage from "@/assets/LazyImage.astro";
   >
     {
       totemImages.map(({ src, alt }) => (
-        <LazyImage
+        <img
           src={src}
           alt={alt}
-          width="409"
-          height="409"
-          class="snap-center"
+          width="382"
+          height="382"
+          decoding="async"
+          loading="lazy"
+          class="snap-center object-cover"
         />
       ))
     }

@@ -2,12 +2,12 @@
 import Logo from "@/assets/Logo.astro";
 import Exp from "@/assets/Exp.astro";
 import Link from "@/components/Link.astro";
-import Clients from "./Clients.astro";
+import Clients from "@/sections/Clients.astro";
 ---
 
 <section
   class:list={[
-    "relative flex min-h-svh flex-col items-center py-20 md:pt-36",
+    "relative flex min-h-svh w-full flex-col items-center py-20 md:pt-36",
     "before:absolute before:top-0 before:z-10 before:size-full before:bg-gradient-to-b before:from-neutral-950 before:to-neutral-950/0",
     "after:absolute after:bottom-0 after:z-10 after:size-full after:bg-gradient-to-t after:from-neutral-950 after:to-neutral-950/0",
   ]}
@@ -25,11 +25,9 @@ import Clients from "./Clients.astro";
   <article
     class="z-20 flex max-w-4xl flex-col items-center justify-center px-6 text-center"
   >
-    <Logo class="h-16 md:h-20 text-sgl lg:h-24" />
+    <Logo class="h-16 text-sgl md:h-20 lg:h-24" />
 
-    <p
-      class="mt-8 inline-flex items-center gap-1 uppercase text-xs"
-    >
+    <p class="mt-8 inline-flex items-center gap-1 text-xs uppercase">
       <Exp class="h-3 text-sgl" />
       30 años creando eventos
     </p>
@@ -53,9 +51,13 @@ import Clients from "./Clients.astro";
     </p>
 
     <div class="mt-6 flex flex-col justify-center gap-4 md:flex-row">
-      <Link class="max-w-72 flex-auto">Solicita tu presupuesto</Link>
-      <Link class="hidden max-w-72 flex-auto md:block" alt
-        >Descubre nuestras soluciones</Link
+      <Link href="#contacto" class="max-w-72 flex-auto"
+        >Solicita tu presupuesto</Link
+      >
+      <Link
+        href="#totems-de-aluminio"
+        class="hidden max-w-72 flex-auto md:block"
+        alt>Descubre nuestras soluciones</Link
       >
     </div>
   </article>
