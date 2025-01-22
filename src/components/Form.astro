@@ -1,0 +1,136 @@
+<form
+  class="flex w-full max-w-2xl flex-col items-center justify-center gap-8 rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-transparent to-neutral-700/10 p-8 text-center shadow backdrop-blur-xl"
+>
+  <label class="flex w-full flex-col items-center gap-2">
+    <span>Nombre de contacto</span>
+    <input
+      type="text"
+      name="nombre"
+      placeholder="Ej. Juan Pérez"
+      class="w-full max-w-md rounded-full border border-neutral-50/10 bg-neutral-950 p-3 text-center text-lg placeholder:text-neutral-600"
+    />
+  </label>
+  <label class="flex w-full flex-col items-center gap-2">
+    <span>Correo electrónico o teléfono</span>
+    <input
+      type="text"
+      name="contacto"
+      placeholder="Ej. juanperez@gmail.com / 600 600 600"
+      class="w-full max-w-md rounded-full border border-neutral-50/10 bg-neutral-950 p-3 text-center text-lg placeholder:text-neutral-600"
+    />
+  </label>
+  <label class="flex w-full flex-col items-center gap-2">
+    <span>Tu mensaje</span>
+    <textarea
+      name="mensaje"
+      placeholder="Escribe aquí tu mensaje..."
+      rows="5"
+      class="w-full max-w-md resize-none rounded-3xl border border-neutral-50/10 bg-neutral-950 p-3 text-center text-lg placeholder:text-neutral-600"
+    ></textarea>
+  </label>
+
+  <div class="mt-4 flex w-full flex-col items-center gap-2">
+    <p>Enviar formulario a través de</p>
+
+    <div
+      class:list={[
+        "group flex w-full max-w-md rounded-full border border-neutral-50/10 bg-gradient-to-tr from-transparent to-neutral-700/20 p-2",
+      ]}
+    >
+      <a
+        id="sendEmail"
+        class="w-full max-w-xs cursor-not-allowed rounded-full p-2 text-center transition-colors hover:bg-sgl hover:text-neutral-950"
+      >
+        Email
+      </a>
+
+      <a
+        id="sendWhatsapp"
+        target="_blank"
+        class="w-full max-w-xs cursor-not-allowed rounded-full p-2 text-center transition-colors hover:bg-sgl hover:text-neutral-950"
+      >
+        Whatsapp
+      </a>
+    </div>
+  </div>
+</form>
+
+<style>
+  textarea {
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  const form = document.querySelector("form") as HTMLFormElement;
+  const eLink = document.querySelector("#sendEmail") as HTMLAnchorElement;
+  const wLink = document.querySelector("#sendWhatsapp") as HTMLAnchorElement;
+  const nInput = document.querySelector(
+    "input[name='nombre']"
+  ) as HTMLInputElement;
+  const cInput = document.querySelector(
+    "input[name='contacto']"
+  ) as HTMLInputElement;
+  const mInput = document.querySelector(
+    "textarea[name='mensaje']"
+  ) as HTMLTextAreaElement;
+
+  const eBase =
+    "mailto:sglvilanova@gmail.com?subject=Contacto%20web%20⚡&body=";
+  const wBase = "https://wa.me/34639963246?text=";
+
+  let name = "";
+  let contact = "";
+  let message = "";
+  let rawMessage = "";
+
+  function updateMessage() {
+    rawMessage = `Contacto: ${name} (${contact})\n${message}`;
+    eLink.href = eBase + encodeURIComponent(rawMessage);
+    wLink.href = wBase + encodeURIComponent(rawMessage);
+
+    if (name !== "" && contact !== "" && message !== "") {
+      eLink.classList.remove("cursor-not-allowed");
+      wLink.classList.remove("cursor-not-allowed");
+    }
+  }
+
+  nInput.addEventListener("input", (ev) => {
+    name = nInput.value;
+    updateMessage();
+  });
+
+  cInput.addEventListener("input", (ev) => {
+    contact = cInput.value;
+    updateMessage();
+  });
+
+  mInput.addEventListener("input", (ev) => {
+    message = mInput.value;
+    updateMessage();
+  });
+
+  eLink.addEventListener("click", (ev) => {
+    ev.preventDefault();
+
+    if (name === "" || contact === "" || message === "") {
+      alert("Por favor, rellena todos los campos.");
+      return;
+    }
+
+    eLink.click();
+    form.reset();
+  });
+
+  wLink.addEventListener("click", (ev) => {
+    ev.preventDefault();
+
+    if (name === "" || contact === "" || message === "") {
+      alert("Por favor, rellena todos los campos.");
+      return;
+    }
+
+    wLink.click();
+    form.reset();
+  });
+</script>

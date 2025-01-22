@@ -1,3 +1,20 @@
-<footer class="flex items-center justify-center border-t border-black p-4">
-  <p>© 2022 Verdu</p>
+---
+import Logo from "@/assets/Logo.astro";
+---
+
+<footer
+  class="flex justify-center border-t border-neutral-50/10 py-5 backdrop-blur-xl"
+>
+  <div
+    class="flex w-full max-w-7xl flex-col items-center justify-between px-6 lg:flex-row gap-4"
+  >
+    <Logo class="h-10" />
+
+    <p class="text-center text-xs text-neutral-400">
+      Aviso legal: esta web no recopila datos personales ni cookies de
+      terceros&nbsp;&nbsp;|&nbsp;&nbsp; SGL Vilanova © <script is:inline>
+        document.write(new Date().getFullYear());
+      </script>
+    </p>
+  </div>
 </footer>
