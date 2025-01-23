@@ -10,7 +10,7 @@ const { title, description, image, name, url } = metadata;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={Astro.props.lang ?? "es"}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -22,6 +22,9 @@ const { title, description, image, name, url } = metadata;
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content={name} />
     <link rel="apple-touch-icon" type="image/png" href="/mobile.png" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="alternate" hreflang="es" href={new URL(Astro.url, Astro.site)} />
+    <link rel="alternate" hreflang="ca" href={new URL(Astro.url, Astro.site)} />
     <title>{title}</title>
     <meta name="author" content="verdu | verdu@live.com" />
     <meta name="robots" content="index, follow" />
