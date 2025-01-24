@@ -1,18 +1,22 @@
 ---
+import { getI18n } from "@/i18n/config";
 import Logo from "@/assets/Logo.astro";
+
+const { currentLocale } = Astro;
+const { footer } = getI18n(currentLocale).home;
 ---
 
 <footer
   class="flex justify-center border-t border-neutral-50/10 py-5 backdrop-blur-xl"
 >
   <div
-    class="flex w-full max-w-7xl flex-col items-center justify-between px-6 lg:flex-row gap-4"
+    class="flex w-full max-w-7xl flex-col items-center justify-between gap-4 px-6 lg:flex-row"
   >
     <Logo class="h-10" />
 
     <p class="text-center text-xs text-neutral-400">
-      Aviso legal: esta web no recopila datos personales ni cookies de
-      terceros&nbsp;&nbsp;|&nbsp;&nbsp; SGL Vilanova © <script is:inline>
+      {footer.legal}
+      <script is:inline>
         document.write(new Date().getFullYear());
       </script>
     </p>

@@ -1,7 +1,11 @@
 ---
+import { getI18n } from "@/i18n/config";
 import { totemImages } from "@/lib/images";
 
 import Arrow from "@/assets/Arrow.astro";
+
+const { currentLocale } = Astro;
+const { service1 } = getI18n(currentLocale).home;
 ---
 
 <div id="totemSlider" class="relative">
@@ -27,14 +31,18 @@ import Arrow from "@/assets/Arrow.astro";
     id="prevBtn"
     class="absolute left-0 top-1/2 flex size-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
   >
-    <p class="sr-only">Anterior</p>
+    <p class="sr-only">
+      {service1.totem_slider_prev}
+    </p>
     <Arrow class="-ml-px h-6 rotate-180 text-neutral-50" />
   </button>
   <button
     id="nextBtn"
     class="absolute right-0 top-1/2 flex size-9 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
   >
-    <p class="sr-only">Siguiente</p>
+    <p class="sr-only">
+      {service1.totem_slider_next}
+    </p>
     <Arrow class="ml-px h-6 text-neutral-50" />
   </button>
 </div>

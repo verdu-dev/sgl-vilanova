@@ -1,19 +1,27 @@
 ---
 import "@fontsource-variable/space-grotesk";
 import { metadata } from "@/lib/metadata";
+import { locales, defaultLocale } from "@/i18n/config";
 
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Background from "@/components/Background.astro";
 
-const { title, description, image, name, url } = metadata;
+const {
+  currentLocale,
+  site,
+  url: { pathname },
+} = Astro;
+const { title, description, image, name } = metadata;
+const canonicalUrl = new URL(pathname, site).href;
+const canonicalPath = pathname.replace(/^\/(es|ca)/, "");
 ---
 
 <!doctype html>
-<html lang={Astro.props.lang ?? "es"}>
+<html lang={currentLocale}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content={description[currentLocale || "es"]} />
     <meta name="viewport" content="width=device-width, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -22,22 +30,39 @@ const { title, description, image, name, url } = metadata;
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content={name} />
     <link rel="apple-touch-icon" type="image/png" href="/mobile.png" />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
-    <link rel="alternate" hreflang="es" href={new URL(Astro.url, Astro.site)} />
-    <link rel="alternate" hreflang="ca" href={new URL(Astro.url, Astro.site)} />
-    <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    {
+      locales.map((locale) => {
+        const localePath = locale === defaultLocale ? "" : `${locale}`;
+        return (
+          <link
+            rel="alternate"
+            hreflang={locale}
+            href={new URL(`${localePath}${canonicalPath}`, Astro.site).href}
+          />
+        );
+      })
+    }
+    <title>{title[currentLocale || "es"]}</title>
     <meta name="author" content="verdu | verdu@live.com" />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title[currentLocale || "es"]} />
+    <meta property="og:url" content={Astro.site} />
     <meta property="og:image" content={image} />
-    <meta property="og:description" content={description} />
+    <meta
+      property="og:description"
+      content={description[currentLocale || "es"]}
+    />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={title[currentLocale || "es"]} />
+    <meta
+      name="twitter:description"
+      content={description[currentLocale || "es"]}
+    />
     <meta name="twitter:image" content={image} />
-    <meta name="twitter:image:alt" content={title} />
+    <meta name="twitter:image:alt" content={title[currentLocale || "es"]} />
   </head>
 
   <body class="bg-neutral-950 text-stone-100">

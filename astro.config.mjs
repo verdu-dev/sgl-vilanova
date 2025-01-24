@@ -6,7 +6,7 @@ export default defineConfig({
   site: "https://www.sgl-vilanova.com",
   i18n: {
     locales: ["es", "ca"],
-    defaultLocale: "es",
+    defaultLocale: "es"
   },
   integrations: [tailwind()]
 });

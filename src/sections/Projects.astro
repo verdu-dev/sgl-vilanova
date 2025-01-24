@@ -1,17 +1,24 @@
 ---
-import Link from "@/components/Link.astro";
+import { getI18n } from "@/i18n/config";
 import { lastProjects } from "@/lib/projects";
+
+import Link from "@/components/Link.astro";
+
+const { currentLocale } = Astro;
+const { projects } = getI18n(currentLocale).home;
 ---
 
 <section
   id="trabajos-realizados"
-  class="flex w-full max-w-7xl flex-col items-center justify-center pt-32 md:pt-40 lg:pt-60 px-6"
+  class="flex w-full max-w-7xl flex-col items-center justify-center px-6 pt-32 md:pt-40 lg:pt-60"
 >
   <h2 class="max-w-3xl text-2xl font-bold md:text-3xl lg:text-4xl">
-    Últimos trabajos realizados
+    {projects.title}
   </h2>
 
-  <ul class="mt-10 grid grid-cols-1 gap-4 lg:gap-8 md:grid-cols-2 lg:grid-cols-4">
+  <ul
+    class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-8"
+  >
     {
       lastProjects.map(({ image, title, logo }) => (
         <li class="flex shrink-0 self-stretch">
@@ -41,5 +48,7 @@ import { lastProjects } from "@/lib/projects";
       ))
     }
   </ul>
-  <Link href="/proyectos" class="mt-10"> Ver todos los proyectos </Link>
+  <Link href={projects.link_href} class="mt-10 text-center">
+    {projects.link}
+  </Link>
 </section>

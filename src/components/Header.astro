@@ -1,6 +1,11 @@
 ---
+import { getI18n } from "@/i18n/config";
+
 import Iso from "@/assets/Iso.astro";
 import Link from "./Link.astro";
+
+const { currentLocale } = Astro;
+const { header } = getI18n(currentLocale).home;
 ---
 
 <header
@@ -10,11 +15,13 @@ import Link from "./Link.astro";
   ]}
 >
   <nav class="flex w-full max-w-7xl items-center justify-between p-4">
-    <a href="/">
+    <a href={header.home_href}>
       <Iso class:list={["h-20 py-3 transition-all", false && "h-10"]} />
     </a>
 
-    <Link href="#contacto" alt>Contacto</Link>
+    <Link href={header.contact_href} alt>
+      {header.conctact}
+    </Link>
   </nav>
 </header>
 

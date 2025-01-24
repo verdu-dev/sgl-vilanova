@@ -1,8 +1,14 @@
 ---
+import { getI18n } from "@/i18n/config";
 import LogoMarquee from "@/components/LogoMarquee.astro";
+
+const { currentLocale } = Astro;
+const { clients } = getI18n(currentLocale).home;
 ---
 
 <div class="relative flex w-full flex-col items-center pt-20 lg:pt-32">
-  <h2 class="z-20 md:text-xl">Clientes con los que trabajamos</h2>
+  <h2 class="z-20 md:text-xl">
+    {clients.title}
+  </h2>
   <LogoMarquee class="z-20 mt-8 max-w-[1440px] opacity-50 md:mt-12" />
 </div>

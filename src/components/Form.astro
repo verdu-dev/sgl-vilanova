@@ -1,36 +1,56 @@
+---
+import { getI18n } from "@/i18n/config";
+
+const { currentLocale } = Astro;
+const { contact } = getI18n(currentLocale).home;
+---
+
 <form
   class="flex w-full max-w-2xl flex-col items-center justify-center gap-8 rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-transparent to-neutral-700/10 px-4 py-8 text-center shadow backdrop-blur-xl md:p-8"
 >
   <label class="flex w-full flex-col items-center gap-2">
-    <span>Nombre de contacto</span>
+    <span>
+      {contact.form_name}
+    </span>
+
     <input
       type="text"
       name="nombre"
-      placeholder="Ej. Juan Pérez"
+      placeholder={`${contact.form_placeholder_prefix} Juan Pérez`}
       class="w-full max-w-md rounded-lg border border-neutral-50/10 bg-neutral-950 p-3 text-center text-lg placeholder:text-neutral-600"
     />
   </label>
+
   <label class="flex w-full flex-col items-center gap-2">
-    <span>Correo electrónico o teléfono</span>
+    <span>
+      {contact.form_contact}
+    </span>
+
     <input
       type="text"
       name="contacto"
-      placeholder="Ej. juanperez@gmail.com / 600 600 600"
+      placeholder={`${contact.form_placeholder_prefix} juanperez@gmail.com / 600 600 600`}
       class="w-full max-w-md rounded-lg border border-neutral-50/10 bg-neutral-950 p-3 text-center text-lg placeholder:text-neutral-600"
     />
   </label>
+
   <label class="flex w-full flex-col items-center gap-2">
-    <span>Tu mensaje</span>
+    <span>
+      {contact.form_message}
+    </span>
+
     <textarea
       name="mensaje"
-      placeholder="Escribe aquí tu mensaje..."
+      placeholder={contact.form_placeholder_message}
       rows="5"
       class="w-full max-w-md resize-none rounded-lg border border-neutral-50/10 bg-neutral-950 p-3 text-center text-lg placeholder:text-neutral-600"
     ></textarea>
   </label>
 
   <div class="mt-4 flex w-full flex-col items-center gap-2">
-    <p>Enviar formulario a través de</p>
+    <p>
+      {contact.form_submit}
+    </p>
 
     <div
       class:list={[

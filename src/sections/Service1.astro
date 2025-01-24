@@ -1,11 +1,16 @@
 ---
+import { getI18n } from "@/i18n/config";
+
 import Exp from "@/assets/Exp.astro";
 import TotemSlider from "@/components/TotemSlider.astro";
 import Link from "@/components/Link.astro";
+
+const { currentLocale } = Astro;
+const { service1 } = getI18n(currentLocale).home;
 ---
 
 <section
-  id="totems-de-aluminio"
+  id={service1.id}
   class:list={[
     "relative flex w-full flex-col items-center",
     "before:absolute before:top-0 before:z-10 before:h-1/2 before:w-full before:bg-gradient-to-b before:from-neutral-950 before:to-neutral-950/0",
@@ -16,15 +21,10 @@ import Link from "@/components/Link.astro";
   >
     <div class="flex w-full flex-col gap-6 lg:w-2/3">
       <h2 class="text-2xl font-bold md:text-3xl lg:text-4xl">
-        Alquiler de totems de aluminio con base de hormigón para eventos
+        {service1.title}
       </h2>
-      <p>
-        En SGL Vilanova, ofrecemos el alquiler de <strong
-          >totems de aluminio</strong
-        > con <strong>base de hormigón</strong>, una solución robusta y segura
-        para tu evento. Estos totems cumplen con la normativa vigente para
-        montar estructuras como escenarios y carpas.
-      </p>
+
+      <p set:html={service1.description_html} />
 
       <ul class="flex flex-col items-center text-neutral-400 lg:items-start">
         <li
@@ -35,7 +35,9 @@ import Link from "@/components/Link.astro";
           ]}
         >
           <Exp class="h-3 text-sgl" />
-          <p>Diseño exclusisvo por SGL Vilanova</p>
+          <p>
+            {service1.list_item1}
+          </p>
         </li>
         <li
           class:list={[
@@ -45,11 +47,15 @@ import Link from "@/components/Link.astro";
           ]}
         >
           <Exp class="h-3 text-sgl" />
-          <p>Certificado de seguridad</p>
+          <p>
+            {service1.list_item2}
+          </p>
         </li>
         <li class="flex items-center gap-1 py-2">
           <Exp class="h-3 text-sgl" />
-          <p>Cumplimiento de la normativa</p>
+          <p>
+            {service1.list_item3}
+          </p>
         </li>
       </ul>
     </div>
@@ -63,10 +69,7 @@ import Link from "@/components/Link.astro";
     class="z-20 mt-20 flex w-full max-w-7xl flex-col items-center justify-center border-b border-t border-neutral-50/10 px-6 py-10 text-center"
   >
     <p class="max-w-4xl text-lg">
-      La base de hormigón es un diseño creado por SGL Vilanova y certificado
-      para garantizar la estabilidad y seguridad de los totems de aluminio. Si
-      lo deseas puedes ver el dossier técnico de nuestras estructuras en el
-      siguiente enlace.
+      {service1.footer_description}
     </p>
 
     <Link
@@ -74,10 +77,12 @@ import Link from "@/components/Link.astro";
       target="_blank"
       class="mt-8 max-w-72 flex-auto"
     >
-      Ver el dossier técnico
+      {service1.footer_link}
     </Link>
 
-    <p class="mt-12">Certificaciones de seguridad</p>
+    <p class="mt-12">
+      {service1.footer_certificates}
+    </p>
 
     <ul
       class="mt-8 flex items-center justify-center gap-8 saturate-50 md:justify-start"

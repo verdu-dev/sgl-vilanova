@@ -1,24 +1,30 @@
 ---
+import { getI18n } from "@/i18n/config";
 import Form from "@/components/Form.astro";
+
+const { currentLocale } = Astro;
+const { contact } = getI18n(currentLocale).home;
 ---
 
 <section
-  id="contacto"
-  class="flex flex-col lg:flex-row w-full max-w-7xl items-center justify-center gap-20 px-6 py-32 md:py-40 lg:py-60"
+  id={contact.id}
+  class="flex w-full max-w-7xl flex-col items-center justify-center gap-20 px-6 py-32 md:py-40 lg:flex-row lg:py-60"
 >
-  <article class="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+  <article
+    class="flex flex-col items-center justify-center text-center lg:items-start lg:text-left"
+  >
     <h2 class="max-w-3xl text-2xl font-bold md:text-3xl lg:text-4xl">
-      Contacta con nosotros
+      {contact.title}
     </h2>
-    <p class="mt-4 text-lg max-w-2xl">
-      Estamos aquí para resolver tus dudas y ayudarte a encontrar la mejor
-      solución para tus eventos. Puedes contactarnos a través del formulario o
-      en cualquiera de los siguientes canales:
+    <p class="mt-4 max-w-2xl text-lg">
+      {contact.description}
     </p>
 
     <ul class="mt-10 flex flex-col gap-8">
       <li class="flex flex-col">
-        <p>Teléfono/Whatsapp</p>
+        <p>
+          {contact.phone}
+        </p>
         <a
           href="tel:0034639963246"
           class="mt-1 text-xl text-sgl underline hover:no-underline"
@@ -27,7 +33,9 @@ import Form from "@/components/Form.astro";
         </a>
       </li>
       <li class="flex flex-col">
-        <p>Correo electrónico</p>
+        <p>
+          {contact.email}
+        </p>
         <a
           href="mailto:sgl.vilanova@gmail.com"
           class="mt-1 text-xl text-sgl underline hover:no-underline"

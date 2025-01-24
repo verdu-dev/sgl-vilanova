@@ -1,13 +1,18 @@
 ---
+import { getI18n } from "@/i18n/config";
+
 import Logo from "@/assets/Logo.astro";
 import Exp from "@/assets/Exp.astro";
 import Link from "@/components/Link.astro";
 import Clients from "@/sections/Clients.astro";
+
+const { currentLocale } = Astro;
+const { hero } = getI18n(currentLocale).home;
 ---
 
 <section
   class:list={[
-    "relative flex lg:min-h-svh w-full flex-col items-center pt-20 md:pt-36 bg-neutral-950",
+    "relative flex w-full flex-col items-center bg-neutral-950 pt-20 md:pt-36 lg:min-h-svh",
     "before:absolute before:top-0 before:z-10 before:size-full before:bg-gradient-to-b before:from-neutral-950 before:to-neutral-950/0",
     "after:absolute after:bottom-0 after:z-10 after:size-full after:bg-gradient-to-t after:from-neutral-950 after:to-neutral-950/0",
   ]}
@@ -29,36 +34,32 @@ import Clients from "@/sections/Clients.astro";
 
     <p class="mt-8 inline-flex items-center gap-1 text-xs uppercase">
       <Exp class="h-3 text-sgl" />
-      30 años creando eventos
+      {hero.kick}
     </p>
 
     <h1 class="mt-6 text-4xl font-bold md:text-6xl">
-      Instalaciones y totems para eventos
+      {hero.title}
     </h1>
 
     <p class="mt-6 text-lg md:mt-10">
       <span class="inline md:hidden">
-        Soluciones diseñadas para garantizar la seguridad de tu evento
+        {hero.description_mobile}
       </span>
-
-      <span class="hidden md:inline"
-        >En <strong>SGL Vilanova</strong>, ofrecemos alquiler de <strong
-          >totems de aluminio</strong
-        > certificados y servicios de <strong>instalaciones eléctricas</strong> temporales
-        para eventos. Nuestras soluciones están diseñadas para garantizar la seguridad
-        y cumplir con la normativa.</span
-      >
+      <span class="hidden md:inline" set:html={hero.description_desktop_html} />
     </p>
 
     <div class="mt-6 flex flex-col justify-center gap-4 md:flex-row">
-      <Link href="#contacto" class="max-w-72 flex-auto"
-        >Solicita tu presupuesto</Link
-      >
+      <Link href={hero.link1_href} class="max-w-80 flex-auto">
+        {hero.link1}
+      </Link>
+
       <Link
-        href="#totems-de-aluminio"
-        class="hidden max-w-72 flex-auto md:block"
-        alt>Descubre nuestras soluciones</Link
+        href={hero.link2_href}
+        class="hidden max-w-80 flex-auto md:block"
+        alt
       >
+        {hero.link2}
+      </Link>
     </div>
   </article>
 
