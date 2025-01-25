@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/space-grotesk";
+
 import { metadata } from "@/lib/metadata";
 import { locales, defaultLocale } from "@/i18n/config";
 
@@ -76,6 +77,13 @@ const canonicalPath = pathname.replace(/^\/(es|ca)/, "");
 </html>
 
 <style is:global>
+  @import "tailwindcss";
+
+  @theme {
+    --font-sans: "Space Grotesk Variable", sans-serif;
+    --color-sgl: oklch(79% 0.15 62);
+  }
+
   :root {
     @apply scroll-smooth;
   }
