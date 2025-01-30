@@ -13,8 +13,8 @@ const { service2 } = getI18n(currentLocale).home;
 <section
   id={service2.id}
   class:list={[
-    "relative flex w-full flex-col items-center justify-center px-6 pt-32 text-center md:pt-40 lg:pt-60 bg-neutral-950",
-    "before:absolute before:inset-0 before:bg-[url('instalaciones-electricas-temporales.jpg')] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-20",
+    "relative flex w-full flex-col items-center justify-center bg-neutral-950 px-6 pt-32 text-center md:pt-40 lg:pt-60",
+    "before:absolute before:inset-0 before:opacity-20",
   ]}
 >
   <article class="z-10 flex max-w-7xl flex-col items-center justify-center">
@@ -64,6 +64,10 @@ const { service2 } = getI18n(currentLocale).home;
 
 <style>
   section:before {
+    background-image: url("/instalaciones-electricas-temporales.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     mask-image: linear-gradient(
       to bottom,
       transparent 10%,
