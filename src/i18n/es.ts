@@ -21,7 +21,7 @@ export default {
     service1: {
       id: "truss-de-aluminio",
       title: "Alquilar truss de aluminio con base de hormigón para eventos",
-      description_html: "En SGL Vilanova, ofrecemos el alquiler de <strong>truss de aluminio</strong> con <strong>base de hormigón</strong>, una solución robusta y segura para tu evento. Estos truss o <strong>totems de aluminio</strong> cumplen con la normativa vigente para montar estructuras como escenarios y carpas.",
+      description_html: "En SGL Vilanova, ofrecemos el alquiler de <strong>truss de aluminio</strong> con <strong>base de hormigón</strong>, una solución robusta y segura para tu evento. Estos truss o <strong>tótems de aluminio</strong> cumplen con la normativa vigente para montar estructuras como escenarios y carpas.",
       list_item1: "Diseño exclusisvo de SGL Vilanova",
       list_item2: "Certificado de seguridad",
       list_item3: "Cumplimiento de la normativa",
