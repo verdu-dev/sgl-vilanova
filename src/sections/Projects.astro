@@ -3,6 +3,7 @@ import { getI18n } from "@/i18n/config";
 import { lastProjects } from "@/lib/projects";
 
 import Link from "@/components/Link.astro";
+import ProjectSlider from "@/components/ProjectSlider.astro";
 
 const { currentLocale } = Astro;
 const { projects } = getI18n(currentLocale).home;
@@ -10,40 +11,26 @@ const { projects } = getI18n(currentLocale).home;
 
 <section
   id="trabajos-realizados"
-  class="flex w-full max-w-7xl flex-col items-center justify-center px-6 pt-32 md:pt-40 lg:pt-60"
+  class:list={[
+    "relative flex w-full flex-col items-center justify-center px-6 pt-32 md:pt-40 lg:pt-60",
+    "before:absolute before:top-0 before:-z-10 before:h-1/2 before:w-full before:bg-gradient-to-b before:from-neutral-950 before:to-neutral-950/0",
+  ]}
 >
   <h2 class="max-w-3xl text-2xl font-bold md:text-3xl lg:text-4xl">
     {projects.title}
   </h2>
 
   <ul
-    class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-8"
+    class="mt-10 grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-3 lg:gap-8"
   >
     {
-      lastProjects.map(({ image, title, logo }) => (
-        <li class="flex shrink-0 self-stretch">
-          <figure class="flex flex-col items-center gap-4 rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-transparent to-neutral-50/10 p-4 shadow-sm backdrop-blur-xl">
-            <img
-              width="262"
-              height="262"
-              src={image}
-              alt={title}
-              decoding="async"
-              loading="lazy"
-              class="aspect-square rounded-lg border border-neutral-50/10 object-cover shadow-sm"
-            />
-            <figcaption class="py-2">
-              <img
-                width="144"
-                height="32"
-                src={logo}
-                alt={title}
-                decoding="async"
-                loading="lazy"
-                class="h-8 w-36 object-contain opacity-50"
-              />
-            </figcaption>
-          </figure>
+      lastProjects.map(({ images, title }, i) => (
+        <li class="flex self-stretch">
+          <ProjectSlider
+            id={`lastProjects${i}`}
+            images={images}
+            title={title}
+          />
         </li>
       ))
     }

@@ -1,0 +1,106 @@
+---
+import { getI18n } from "@/i18n/config";
+
+import Arrow from "@/assets/Arrow.astro";
+
+const { currentLocale } = Astro;
+const { id, images, title } = Astro.props;
+const { service1 } = getI18n(currentLocale).home;
+---
+
+<figure
+  id={id}
+  class="relative flex flex-col items-center gap-4 rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-transparent to-neutral-50/10 p-6 shadow-sm backdrop-blur-xl"
+>
+  <picture class="relative">
+    <div
+      class="relative flex aspect-square snap-x snap-mandatory overflow-x-auto overflow-y-clip rounded-xl border border-neutral-50/10"
+    >
+      {
+        images.map((src: string) => (
+          <img
+            src={src}
+            alt={title}
+            width="382"
+            height="382"
+            decoding="async"
+            loading="lazy"
+            class="aspect-square snap-center object-cover"
+          />
+        ))
+      }
+    </div>
+
+    <button
+      id={id + "PrevBtn"}
+      class="absolute top-1/2 left-0 flex size-9 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
+    >
+      <p class="sr-only">
+        {service1.totem_slider_prev}
+      </p>
+      <Arrow class="-ml-px h-6 rotate-180 text-neutral-50" />
+    </button>
+
+    <button
+      id={id + "NextBtn"}
+      class="absolute top-1/2 right-0 flex size-9 -translate-y-1/2 translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
+    >
+      <p class="sr-only">
+        {service1.totem_slider_next}
+      </p>
+      <Arrow class="ml-px h-6 text-neutral-50" />
+    </button>
+  </picture>
+
+  <figcaption class="py-2">
+    {title}
+  </figcaption>
+</figure>
+
+<style>
+  .snap-x {
+    scrollbar-width: none;
+  }
+</style>
+
+<script define:vars={{ id }} is:inline>
+  sliders[id] = document.querySelector(`#${id} > picture > div`);
+  buttons[`${id}PrevBtn`] = document.querySelector(`#${id}PrevBtn`);
+  buttons[`${id}NextBtn`] = document.querySelector(`#${id}NextBtn`);
+  images[id] = sliders[id].querySelectorAll("img");
+
+  if (images[id].length <= 1) {
+    buttons[`${id}PrevBtn`].style.display = "none";
+    buttons[`${id}NextBtn`].style.display = "none";
+
+    return;
+  }
+
+  buttons[`${id}PrevBtn`].addEventListener("click", () => {
+    const lastImage = sliders[id].querySelector("img:last-child");
+
+    sliders[id].scrollBy({
+      behavior: "smooth",
+      left: -sliders[id].offsetWidth,
+    });
+
+    setTimeout(() => {
+      lastImage.remove();
+      sliders[id].prepend(lastImage);
+    }, 400);
+  });
+
+  buttons[`${id}NextBtn`].addEventListener("click", () => {
+    const firstImage = sliders[id].querySelector("img");
+
+    sliders[id].scrollBy({
+      behavior: "smooth",
+      left: sliders[id].offsetWidth,
+    });
+
+    setTimeout(() => {
+      firstImage.remove();
+      sliders[id].append(firstImage);
+    }, 400);
+  });
+</script>

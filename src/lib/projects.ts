@@ -1,50 +1,40 @@
 export const projects: Project[] = [
   {
-    image: "/projects/totem-de-aluminio-1.webp",
-    title: "Instalación de totems para Coca-Cola",
-    logo: "/logos/coca-cola.svg",
+    title: "Instalación de truss para Osos Sitges",
+    images: [
+      "/projects/osos-sitges/1.jpg",
+      "/projects/osos-sitges/2.jpg",
+      "/projects/osos-sitges/3.jpg",
+      "/projects/osos-sitges/4.jpg"
+    ]
   },
+
   {
-    image: "/projects/totem-de-aluminio-2.webp",
-    title: "Instalación eléctrica para Aerostar",
-    logo: "/logos/aerostar.svg",
+    title: "Instalación de truss para Movistar",
+    images: [
+      "/projects/movistar/1.jpg",
+      "/projects/movistar/2.jpg"
+    ]
   },
+
   {
-    image: "/projects/totem-de-aluminio-3.webp",
-    title: "Instalacion de totems para Ajuntament de Vilanova i la Geltru",
-    logo: "/logos/ajuntament-vilanova.svg",
+    title: "Instalación mixta para Sant Boi",
+    images: [
+      "/projects/sant-boi/1.jpg"
+    ]
   },
+
   {
-    image: "/projects/totem-de-aluminio-4.webp",
-    title: "Instalacion mixta para Primavera Sound",
-    logo: "/logos/primavera-sound.svg",
+    title: "Instalación de truss para la American Cup",
+    images: [
+      "/projects/america-cup/1.jpg"
+    ]
   },
-  {
-    image: "/projects/totem-de-aluminio-1.webp",
-    title: "Instalación de totems para Coca-Cola",
-    logo: "/logos/coca-cola.svg",
-  },
-  {
-    image: "/projects/totem-de-aluminio-2.webp",
-    title: "Instalación eléctrica para Aerostar",
-    logo: "/logos/aerostar.svg",
-  },
-  {
-    image: "/projects/totem-de-aluminio-3.webp",
-    title: "Instalacion de totems para Ajuntament de Vilanova i la Geltru",
-    logo: "/logos/ajuntament-vilanova.svg",
-  },
-  {
-    image: "/projects/totem-de-aluminio-4.webp",
-    title: "Instalacion mixta para Primavera Sound",
-    logo: "/logos/primavera-sound.svg",
-  }
 ];
 
-export const lastProjects = projects.slice(0, 4);
+export const lastProjects = projects.slice(0, 3);
 
 export interface Project {
-  image: string;
   title: string;
-  logo: string;
+  images: Array<string>;
 }

@@ -29,7 +29,7 @@ const { service1 } = getI18n(currentLocale).home;
 
   <button
     id="prevBtn"
-    class="absolute left-0 top-1/2 flex size-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
+    class="absolute top-1/2 left-0 flex size-9 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
   >
     <p class="sr-only">
       {service1.totem_slider_prev}
@@ -38,7 +38,7 @@ const { service1 } = getI18n(currentLocale).home;
   </button>
   <button
     id="nextBtn"
-    class="absolute right-0 top-1/2 flex size-9 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
+    class="absolute top-1/2 right-0 flex size-9 -translate-y-1/2 translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
   >
     <p class="sr-only">
       {service1.totem_slider_next}
@@ -71,7 +71,7 @@ const { service1 } = getI18n(currentLocale).home;
     setTimeout(() => {
       lastImage.remove();
       slider.prepend(lastImage);
-    }, 500);
+    }, 400);
   });
 
   rightButton.addEventListener("click", () => {
@@ -85,6 +85,6 @@ const { service1 } = getI18n(currentLocale).home;
     setTimeout(() => {
       firstImage.remove();
       slider.append(firstImage);
-    }, 500);
+    }, 400);
   });
 </script>

@@ -1,18 +1,18 @@
 export const totemImages = [
   {
-    src: "/totem-de-aluminio-1.webp",
+    src: "/totem-de-aluminio-1.jpg",
     alt: "Totem de aluminio con base de hormigón"
   },
   {
-    src: "/totem-de-aluminio-2.webp",
+    src: "/totem-de-aluminio-2.jpg",
     alt: "Totem de aluminio con base de hormigón"
   },
   {
-    src: "/totem-de-aluminio-3.webp",
+    src: "/totem-de-aluminio-3.jpg",
     alt: "Totem de aluminio con base de hormigón"
   },
   {
-    src: "/totem-de-aluminio-4.webp",
+    src: "/totem-de-aluminio-4.jpg",
     alt: "Totem de aluminio con base de hormigón"
   }
 ]

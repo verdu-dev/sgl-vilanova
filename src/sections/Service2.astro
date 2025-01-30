@@ -12,11 +12,12 @@ const { service2 } = getI18n(currentLocale).home;
 
 <section
   id={service2.id}
-  class="flex flex-col max-w-7xl w-full justify-center pt-32 text-center items-center md:pt-40 lg:pt-60 px-6"
+  class:list={[
+    "relative flex w-full flex-col items-center justify-center px-6 pt-32 text-center md:pt-40 lg:pt-60 bg-neutral-950",
+    "before:absolute before:inset-0 before:bg-[url('instalaciones-electricas-temporales.jpg')] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-20",
+  ]}
 >
-  <article
-    class="z-10 flex max-w-7xl flex-col items-center justify-center"
-  >
+  <article class="z-10 flex max-w-7xl flex-col items-center justify-center">
     <div class="flex max-w-4xl flex-col items-center">
       <h2 class="max-w-3xl text-2xl font-bold md:text-3xl lg:text-4xl">
         {service2.title}
@@ -26,25 +27,27 @@ const { service2 } = getI18n(currentLocale).home;
     </div>
   </article>
 
-  <ul class="mt-12 grid grid-cols-1 text-neutral-400 md:grid-cols-3 lg:gap-8">
+  <ul
+    class="mt-12 grid max-w-7xl grid-cols-1 text-neutral-400 md:grid-cols-3 lg:gap-8"
+  >
     <li
       class="flex flex-col items-center justify-center gap-4 self-stretch p-8"
     >
-      <Custom class="h-10 text-sgl" />
+      <Custom class="text-sgl h-10" />
       <p set:html={service2.list_item1_html} />
     </li>
 
     <li
       class="flex flex-col items-center justify-center gap-4 self-stretch p-8"
     >
-      <Cert class="h-10 text-sgl" />
+      <Cert class="text-sgl h-10" />
       <p set:html={service2.list_item2_html} />
     </li>
 
     <li
       class="flex flex-col items-center justify-center gap-4 self-stretch p-8"
     >
-      <Eco class="h-10 text-sgl" />
+      <Eco class="text-sgl h-10" />
       <p set:html={service2.list_item3_html} />
     </li>
   </ul>
@@ -58,3 +61,15 @@ const { service2 } = getI18n(currentLocale).home;
     {service2.footer_link}
   </Link>
 </section>
+
+<style>
+  section:before {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 10%,
+      black 50%,
+      black 50%,
+      transparent 90%
+    );
+  }
+</style>
