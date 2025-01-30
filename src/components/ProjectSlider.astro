@@ -10,9 +10,9 @@ const { service1 } = getI18n(currentLocale).home;
 
 <figure
   id={id}
-  class="relative flex flex-col items-center gap-4 rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-transparent to-neutral-50/10 p-6 shadow-sm backdrop-blur-xl"
+  class="relative w-full flex flex-col items-center gap-4 rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-transparent to-neutral-50/10 p-6 shadow-sm backdrop-blur-xl"
 >
-  <picture class="relative">
+  <picture class="relative w-full">
     <div
       class="relative flex aspect-square snap-x snap-mandatory overflow-x-auto overflow-y-clip rounded-xl border border-neutral-50/10"
     >
@@ -25,7 +25,7 @@ const { service1 } = getI18n(currentLocale).home;
             height="382"
             decoding="async"
             loading="lazy"
-            class="aspect-square snap-center object-cover"
+            class="size-full aspect-square snap-center object-cover"
           />
         ))
       }
@@ -52,7 +52,7 @@ const { service1 } = getI18n(currentLocale).home;
     </button>
   </picture>
 
-  <figcaption class="py-2">
+  <figcaption class="py-2 text-lg">
     {title}
   </figcaption>
 </figure>

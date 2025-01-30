@@ -21,11 +21,11 @@ const { projects } = getI18n(currentLocale).home;
   </h2>
 
   <ul
-    class="mt-10 grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-3 lg:gap-8"
+    class="mt-10 grid max-w-7xl grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-4"
   >
     {
       lastProjects.map(({ images, title }, i) => (
-        <li class="flex self-stretch">
+        <li class="flex self-stretch lg:last-of-type:hidden">
           <ProjectSlider
             id={`lastProjects${i}`}
             images={images}

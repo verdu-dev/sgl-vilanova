@@ -1,6 +1,6 @@
 export const projects: Project[] = [
   {
-    title: "Instalación de truss para Osos Sitges",
+    title: "Osos Sitges",
     images: [
       "/projects/osos-sitges/1.jpg",
       "/projects/osos-sitges/2.jpg",
@@ -10,7 +10,7 @@ export const projects: Project[] = [
   },
 
   {
-    title: "Instalación de truss para Movistar",
+    title: "Movistar",
     images: [
       "/projects/movistar/1.jpg",
       "/projects/movistar/2.jpg"
@@ -18,21 +18,21 @@ export const projects: Project[] = [
   },
 
   {
-    title: "Instalación mixta para Sant Boi",
+    title: "Ajuntament de Sant Boi",
     images: [
       "/projects/sant-boi/1.jpg"
     ]
   },
 
   {
-    title: "Instalación de truss para la American Cup",
+    title: "American Cup Barcelona",
     images: [
       "/projects/america-cup/1.jpg"
     ]
   },
 ];
 
-export const lastProjects = projects.slice(0, 3);
+export const lastProjects = projects.slice(0, 4);
 
 export interface Project {
   title: string;
