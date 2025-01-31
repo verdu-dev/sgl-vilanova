@@ -66,10 +66,8 @@ export default {
   },
 
   projects: {
-    title: "Projectes",
-    description: "Pàgina en construcció. Disculpeu les molèsties.",
-    link_href: "/ca/",
-    link: "Tornar a l'inici",
+    title: "<strong>Projectes</strong> realitzats en esdeveniments i espais públics",
+    description: "Més de 30 anys creant solucions certificades per a esdeveniments. Descobreix els nostres projectes amb <strong>truss d'alumini</strong> i <strong>instal·lacions elèctriques temporals</strong> per a festivals, festes i espectacles.",
   },
 
   components: {

@@ -1,8 +1,10 @@
 ---
 import { getI18n } from "@/i18n/config";
+import { projects as projectsList } from "@/lib/projects";
 
-import Link from "@/components/Link.astro";
 import Layout from "@/layouts/Layout.astro";
+import ProjectSlider from "@/components/ProjectSlider.astro";
+import Contact from "@/sections/Contact.astro";
 
 const { currentLocale } = Astro;
 const { projects } = getI18n(currentLocale);
@@ -11,19 +13,32 @@ const { projects } = getI18n(currentLocale);
 <Layout>
   <main class="flex flex-1 flex-col items-center">
     <section
-      class="flex w-full max-w-7xl flex-1 flex-col items-center justify-center px-6 text-center"
+      class="flex w-full max-w-7xl flex-col items-center border-b border-neutral-50/10 px-6 py-32 text-center md:pt-40 lg:pt-60"
     >
-      <h1 class="text-5xl font-bold">
-        {projects.title}
-      </h1>
+      <h1
+        class="[&>strong]:text-sgl max-w-3xl text-5xl font-bold"
+        set:html={projects.title}
+      />
 
-      <p class="mt-4 text-lg">
-        {projects.description}
-      </p>
+      <p class="mt-10 max-w-4xl text-lg" set:html={projects.description} />
 
-      <Link href={projects.link_href} class="mt-10">
-        {projects.link}
-      </Link>
+      <ul
+        class="mt-20 grid max-w-7xl grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-4"
+      >
+        {
+          projectsList.map(({ images, title }, i) => (
+            <li class="flex self-stretch">
+              <ProjectSlider
+                id={`projects${i}`}
+                images={images}
+                title={title}
+              />
+            </li>
+          ))
+        }
+      </ul>
     </section>
+
+    <Contact />
   </main>
 </Layout>

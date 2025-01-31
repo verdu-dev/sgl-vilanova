@@ -66,10 +66,8 @@ export default {
   },
 
   projects: {
-    title: "Proyectos",
-    description: "Página en construcción. Disculpe las molestias.",
-    link_href: "/",
-    link: "Volver al inicio",
+    title: "<strong>Proyectos</strong> realizados en eventos y espacios públicos",
+    description: "Más de 30 años creando soluciones certificadas para eventos. Descubre nuestros proyectos con <strong>truss de aluminio</strong> e <strong>instalaciones eléctricas temporales</strong> para festivales, ferias y espectáculos.",
   },
 
   components: {
