@@ -70,5 +70,13 @@ export default {
     description: "Pàgina en construcció. Disculpeu les molèsties.",
     link_href: "/ca/",
     link: "Tornar a l'inici",
+  },
+
+  components: {
+    slider: {
+      alt_prefix: "Projecte per: ",
+      prev: "Anterior",
+      next: "Següent",
+    }
   }
 }

@@ -70,5 +70,13 @@ export default {
     description: "Página en construcción. Disculpe las molestias.",
     link_href: "/",
     link: "Volver al inicio",
+  },
+
+  components: {
+    slider: {
+      alt_prefix: "Proyecto para: ",
+      prev: "Anterior",
+      next: "Siguiente",
+    }
   }
 }

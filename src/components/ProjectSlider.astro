@@ -5,12 +5,12 @@ import Arrow from "@/assets/Arrow.astro";
 
 const { currentLocale } = Astro;
 const { id, images, title } = Astro.props;
-const { service1 } = getI18n(currentLocale).home;
+const { slider } = getI18n(currentLocale).components;
 ---
 
 <figure
   id={id}
-  class="relative w-full flex flex-col items-center gap-4 rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-transparent to-neutral-50/10 p-6 shadow-sm backdrop-blur-xl"
+  class="relative flex w-full flex-col items-center gap-4 rounded-xl border border-neutral-50/10 bg-gradient-to-tr from-transparent to-neutral-50/10 p-6 shadow-sm backdrop-blur-xl"
 >
   <picture class="relative w-full">
     <div
@@ -20,12 +20,12 @@ const { service1 } = getI18n(currentLocale).home;
         images.map((src: string) => (
           <img
             src={src}
-            alt={title}
+            alt={slider.alt_prefix + title}
             width="382"
             height="382"
             decoding="async"
             loading="lazy"
-            class="size-full aspect-square snap-center object-cover"
+            class="aspect-square size-full snap-center object-cover"
           />
         ))
       }
@@ -36,7 +36,7 @@ const { service1 } = getI18n(currentLocale).home;
       class="absolute top-1/2 left-0 flex size-9 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
     >
       <p class="sr-only">
-        {service1.totem_slider_prev}
+        {slider.prev}
       </p>
       <Arrow class="-ml-px h-6 rotate-180 text-neutral-50" />
     </button>
@@ -46,7 +46,7 @@ const { service1 } = getI18n(currentLocale).home;
       class="absolute top-1/2 right-0 flex size-9 -translate-y-1/2 translate-x-1/2 cursor-pointer items-center justify-center rounded-full border border-neutral-50/10 bg-neutral-900/90 transition-transform hover:scale-110"
     >
       <p class="sr-only">
-        {service1.totem_slider_next}
+        {slider.next}
       </p>
       <Arrow class="ml-px h-6 text-neutral-50" />
     </button>
