@@ -3,6 +3,7 @@ import { getI18n } from "@/i18n/config";
 import { projects as projectsList } from "@/lib/projects";
 
 import Layout from "@/layouts/Layout.astro";
+import Logo from "@/assets/Logo.astro";
 import ProjectSlider from "@/components/ProjectSlider.astro";
 import Contact from "@/sections/Contact.astro";
 
@@ -15,12 +16,17 @@ const { projects } = getI18n(currentLocale);
     <section
       class="flex w-full max-w-7xl flex-col items-center border-b border-neutral-50/10 px-6 py-32 text-center md:pt-40 lg:pt-60"
     >
+      <Logo class="text-sgl h-16 md:h-20 lg:h-24" />
+
       <h1
-        class="[&>strong]:text-sgl max-w-3xl text-5xl font-bold"
+        class="mt-8 max-w-3xl text-3xl font-bold md:text-3xl lg:text-5xl"
         set:html={projects.title}
       />
 
-      <p class="mt-10 max-w-4xl text-lg" set:html={projects.description} />
+      <p
+        class="mt-10 max-w-2xl text-lg lg:max-w-4xl"
+        set:html={projects.description}
+      />
 
       <ul
         class="mt-20 grid max-w-7xl grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-4"
