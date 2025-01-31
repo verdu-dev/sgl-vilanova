@@ -7,12 +7,12 @@ interface Metadata {
 
 export const metadata: Metadata = {
   title: {
-    es: "SGL Vilanova | Totems e instalaciones eléctricas para eventos",
-    ca: "SGL Vilanova | Tòtems i instal·lacions elèctriques per a esdeveniments",
+    es: "SGL Vilanova | Truss e instalaciones eléctricas para eventos",
+    ca: "SGL Vilanova | Truss i instal·lacions elèctriques per a esdeveniments",
   },
   description: {
-    es: "Alquiler de tótems de diseño propio e instalaciones eléctricas certificadas para eventos. Soluciones adaptadas a la normativa actual.",
-    ca: "Alquilar tòtems de disseny propi i instal·lacions elèctriques certificats per a esdeveniments. Solucions adaptades a la normativa actual.",
+    es: "Alquiler de truss de aluminio e instalaciones eléctricas temporales certificadas para eventos. Las soluciones más seguras y adaptadas a la normativa actual.",
+    ca: "Alquilar truss d'alumini i instal·lacions elèctriques temporals certificats per a esdeveniments. Les solucions més segures i adaptades a la normativa actual.",
   },
   image: "card.jpg",
   name: "SGL Vilanova"
